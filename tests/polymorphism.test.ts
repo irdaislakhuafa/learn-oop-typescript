@@ -26,6 +26,15 @@ describe('polymorphism', () => {
 		expect(employee instanceof Employee).toBe(true)
 		expect(employee instanceof Manager).toBe(true)
 		expect(employee instanceof VicePresident).toBe(true)
+	})
 
+	it('learn method polymorphism', () => {
+		const sayHello = (value: Employee): string => {
+			return `Hello ${value.name}`
+		}
+
+		expect(sayHello(new Employee("irda"))).toBe("Hello irda")
+		expect(sayHello(new Manager("irda"))).toBe("Hello irda")
+		expect(sayHello(new VicePresident("irda"))).toBe("Hello irda")
 	})
 })
