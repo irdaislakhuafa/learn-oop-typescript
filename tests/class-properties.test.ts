@@ -14,6 +14,10 @@ describe('class properties', () => {
 				this.name = name
 			}
 		}
+
+		sayHello(name: string): string {
+			return `Hello ${name}, my name is ${this.name}`;
+		}
 	}
 
 	class Order { }
@@ -26,5 +30,10 @@ describe('class properties', () => {
 		console.log("customer.id:", customer.id)
 		console.log("customer.name:", customer.name)
 		console.log("customer.age:", customer.age)
+	})
+
+	it('learn class method', () => {
+		const customer = new Customer(1, "irda")
+		expect(customer.sayHello('haha')).toBe('Hello haha, my name is irda')
 	})
 })
