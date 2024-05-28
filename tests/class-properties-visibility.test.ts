@@ -5,7 +5,7 @@ describe('class properties visibility', () => {
 	}
 
 	class Counter implements CounterInterface {
-		private counter: number = 0;
+		protected counter: number = 0;
 
 		public increment(): void {
 			this.counter++
@@ -16,12 +16,27 @@ describe('class properties visibility', () => {
 		}
 	}
 
-	it('learn visibility', () => {
+	class DoubleCounter extends Counter {
+		public increment(): void {
+			this.counter += 2
+		}
+	}
+
+	it('learn visibility with counter', () => {
 		const counter = new Counter()
 		counter.increment()
 		counter.increment()
 		counter.increment()
 
 		expect(counter.getCounter()).toBe(3)
+	})
+
+	it('learn visibility with double counter', () => {
+		const counter = new DoubleCounter()
+		counter.increment()
+		counter.increment()
+		counter.increment()
+
+		expect(counter.getCounter()).toBe(6)
 	})
 })
