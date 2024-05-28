@@ -30,11 +30,21 @@ describe('polymorphism', () => {
 
 	it('learn method polymorphism', () => {
 		const sayHello = (value: Employee): string => {
-			return `Hello ${value.name}`
+			if (value instanceof VicePresident) {
+				const vp = value as VicePresident
+				return `Hello VP ${vp.name}`
+			}
+
+			if (value instanceof Manager) {
+				const m = value as Manager
+				return `Hello Manager ${m.name}`
+			}
+
+			return `Hello Employee ${value.name}`
 		}
 
-		expect(sayHello(new Employee("irda"))).toBe("Hello irda")
-		expect(sayHello(new Manager("irda"))).toBe("Hello irda")
-		expect(sayHello(new VicePresident("irda"))).toBe("Hello irda")
+		expect(sayHello(new Employee("irda"))).toBe("Hello Employee irda")
+		expect(sayHello(new Manager("irda"))).toBe("Hello Manager irda")
+		expect(sayHello(new VicePresident("irda"))).toBe("Hello VP irda")
 	})
 })
