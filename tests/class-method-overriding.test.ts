@@ -17,7 +17,7 @@ describe('class method overriding', () => {
 		}
 
 		sayHello(name: string): string {
-			return `Hello ${name}, my name is ${this.name} and i'm is Manager`
+			return `${super.sayHello(name)} and i'm is Manager`
 		}
 	}
 
