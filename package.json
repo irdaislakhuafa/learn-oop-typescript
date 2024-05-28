@@ -1,0 +1,17 @@
+{
+  "name": "learn-oop-typescript",
+  "version": "1.0.0",
+  "description": "My Code Collection While Learning Object Oriented Programming in TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Irda Islakhu Afa",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
