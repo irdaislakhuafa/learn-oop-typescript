@@ -8,6 +8,7 @@
   },
   "author": "Irda Islakhu Afa",
   "license": "ISC",
+  "type": "module",
   "devDependencies": {
     "@types/bun": "latest"
   },
